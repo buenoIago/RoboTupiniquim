@@ -6,7 +6,7 @@ class Program
     {
         Console.Clear();
 
-        Console.WriteLine("Robô Tupiniquim");
+        /*
         Console.Write("Digite a posição inicial X: ");
         int roboX = Convert.ToInt32(Console.ReadLine());
 
@@ -14,38 +14,46 @@ class Program
         int roboY = Convert.ToInt32(Console.ReadLine());
 
         Console.Write("Digite a direção: (N, S, L, O)");
-        string direcao = Console.ReadLine();
+        char direcao = Convert.ToChar(Console.ReadLine());
+        */
 
-        Console.WriteLine("Digite a sequência de comandos: (Ex. E, D, M)");
-        string sequenciaComandos = Console.ReadLine();
+        int roboX = 1;
+        int roboY = 1;
+        char direcao = 'N';
 
-        for (int i = 0; i < sequenciaComandos.Length; i++)
+        string comando = "EMEMEMEMM";
+       
+        Console.WriteLine("-------------------------------------"); 
+        Console.WriteLine("Robô Tupiniquim");
+        Console.WriteLine("-------------------------------------"); 
+        Console.WriteLine("Coordenadas    X Y Direção");
+        Console.WriteLine($"Posição inicial: {roboX} {roboY}  {direcao}");
+
+        for (int i = 0; i < comando.Length; i++)
         {
-            char c = sequenciaComandos[i];
+            char comandoAtual = comando[i];
 
-            if (c == 'E')
+            if (comandoAtual == 'E')
             {
-                if (direcao == "N") direcao = "O";
-                else if (direcao == "O") direcao = "S";
-                else if (direcao == "S") direcao = "L";
-                else if (direcao == "L") direcao = "N";
+                if (direcao == 'N') direcao = 'O';
+                else if (direcao == 'O') direcao = 'S';
+                else if (direcao == 'S') direcao = 'L';
+                else if (direcao == 'L') direcao = 'N';
             }
-            else if (c == 'D')
+            if (comandoAtual == 'D')
             {
-                if (direcao == "N") direcao = "L";
-                else if (direcao == "L") direcao = "S";
-                else if (direcao == "S") direcao = "O";
-                else if (direcao == "O") direcao = "N";
+                if (direcao == 'N') direcao = 'L';
+                else if (direcao == 'O') direcao = 'N';
+                else if (direcao == 'S') direcao = 'L';
+                else if (direcao == 'L') direcao = 'S';
             }
-            else if (c == 'M')
+            if (comandoAtual == 'M')
             {
-                if (direcao == "N") roboY++;
-                else if (direcao == "S") roboY--;
-                else if (direcao == "L") roboX++;
-                else if (direcao == "O") roboX--;
+                
             }
         }
 
         Console.WriteLine($"Posição alcançada: {roboX} {roboY} {direcao}");
+        Console.ReadLine();
     }
 }
