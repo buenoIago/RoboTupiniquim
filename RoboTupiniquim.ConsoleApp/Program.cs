@@ -5,18 +5,16 @@ class Program
     {
         Console.Clear();
 
-        /*
         Console.Write("Digite a posição inicial X: ");
-        int roboX = Convert.ToInt32(Console.ReadLine());
+        Robo.roboX = Convert.ToInt32(Console.ReadLine());
 
         Console.Write("Digite a posição inicial Y: ");
-        int roboY = Convert.ToInt32(Console.ReadLine());
+        Robo.roboY = Convert.ToInt32(Console.ReadLine());
 
-        Console.Write("Digite a direção: (N, S, L, O)");
-        char direcao = Convert.ToChar(Console.ReadLine());
-        */
+        Console.Write("Digite a direção: (N, S, L, O): ");
+        Robo.direcao = Convert.ToChar(Console.ReadLine().ToUpper());
 
-        Robo.Configurar(3, 3, 'L');
+        Robo.Configurar(Robo.roboX, Robo.roboY, Robo.direcao);
        
         Console.WriteLine("-------------------------------------"); 
         Console.WriteLine("Robô Tupiniquim");
