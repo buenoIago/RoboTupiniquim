@@ -18,7 +18,7 @@ class Program
         */
 
         int roboX = 1;
-        int roboY = 1;
+        int roboY = 2;
         char direcao = 'N';
 
         string comando = "EMEMEMEMM";
@@ -26,8 +26,8 @@ class Program
         Console.WriteLine("-------------------------------------"); 
         Console.WriteLine("Robô Tupiniquim");
         Console.WriteLine("-------------------------------------"); 
-        Console.WriteLine("Coordenadas    X Y Direção");
-        Console.WriteLine($"Posição inicial: {roboX} {roboY}  {direcao}");
+        Console.WriteLine("Coordenadas    X Y  Direção");
+        Console.WriteLine($"Posição inicial: {roboX} {roboY}   {direcao}");
 
         for (int i = 0; i < comando.Length; i++)
         {
@@ -40,20 +40,24 @@ class Program
                 else if (direcao == 'S') direcao = 'L';
                 else if (direcao == 'L') direcao = 'N';
             }
-            if (comandoAtual == 'D')
+            else if (comandoAtual == 'D')
             {
                 if (direcao == 'N') direcao = 'L';
                 else if (direcao == 'O') direcao = 'N';
                 else if (direcao == 'S') direcao = 'L';
                 else if (direcao == 'L') direcao = 'S';
             }
-            if (comandoAtual == 'M')
+            else if (comandoAtual == 'M')
             {
-                
+                if (direcao == 'N') roboY++;
+                else if (direcao == 'S') roboY--;
+                else if (direcao == 'L') roboY++;
+                else if (direcao == 'O') roboY--;
             }
         }
 
-        Console.WriteLine($"Posição alcançada: {roboX} {roboY} {direcao}");
+        Console.WriteLine("\nCoordenadas       X Y Direção");
+        Console.WriteLine($"Posição alcançada: {roboX} {roboY}   {direcao}");
         Console.ReadLine();
     }
 }
