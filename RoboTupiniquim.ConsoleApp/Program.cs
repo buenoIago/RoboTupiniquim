@@ -4,19 +4,24 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.Write("Digite a posição inicial: ");
-        string[] entrada = Console.ReadLine().Split();
+        Console.Clear();
 
-        int x = int.Parse(entrada[0]);
-        int y = int.Parse(entrada[1]);
-        string direcao = entrada[2];
+        Console.WriteLine("Robô Tupiniquim");
+        Console.Write("Digite a posição inicial X: ");
+        int roboX = Convert.ToInt32(Console.ReadLine());
 
-        Console.Write("Digite a sequência de comandos: ");
-        string comandos = Console.ReadLine();
+        Console.Write("Digite a posição inicial Y: ");
+        int roboY = Convert.ToInt32(Console.ReadLine());
 
-        for (int i = 0; i < comandos.Length; i++)
+        Console.Write("Digite a direção: (N, S, L, O)");
+        string direcao = Console.ReadLine();
+
+        Console.WriteLine("Digite a sequência de comandos: (Ex. E, D, M)");
+        string sequenciaComandos = Console.ReadLine();
+
+        for (int i = 0; i < sequenciaComandos.Length; i++)
         {
-            char c = comandos[i];
+            char c = sequenciaComandos[i];
 
             if (c == 'E')
             {
@@ -34,13 +39,13 @@ class Program
             }
             else if (c == 'M')
             {
-                if (direcao == "N") y++;
-                else if (direcao == "S") y--;
-                else if (direcao == "L") x++;
-                else if (direcao == "O") x--;
+                if (direcao == "N") roboY++;
+                else if (direcao == "S") roboY--;
+                else if (direcao == "L") roboX++;
+                else if (direcao == "O") roboX--;
             }
         }
 
-        Console.WriteLine($"Posição alcançada: {x} {y} {direcao}");
+        Console.WriteLine($"Posição alcançada: {roboX} {roboY} {direcao}");
     }
 }
