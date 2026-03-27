@@ -3,6 +3,8 @@
 ## 🤖 INTRODUÇÃO
 Este simulador de movimentação foi desenvolvido em C# para operar via Console. O objetivo é controlar um robô em uma grade lógica, permitindo que ele se posicione e execute comandos de exploração em um plano cartesiano. O sistema processa coordenadas geográficas e orientações (Norte, Sul, Leste, Oeste) para determinar a localização exata do robô após uma série de instruções.
 
+Desenvolvido por Iago na Academia do Programador.
+
 ## FUNCIONALIDADES
 * Interface de configuração de posição inicial $(X, Y)$.
 * Sistema de orientação por pontos cardeais $(N, S, L, O)$.
