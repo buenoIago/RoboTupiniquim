@@ -3,6 +3,9 @@ class Program
 {
     static void Main(string[] args)
     {
+        while (true)
+        {
+            
         Console.Clear();
 
         Console.Write("Digite a posição inicial X: ");
@@ -27,5 +30,6 @@ class Program
         Console.WriteLine("\nCoordenadas       X Y Direção");
         Console.WriteLine($"Posição alcançada: {Robo.roboX} {Robo.roboY}   {Robo.direcao}");
         Console.ReadLine();
+        }
     }
 }
